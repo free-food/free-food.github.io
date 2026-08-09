@@ -1,0 +1,119 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.header p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.section h2 {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  color: var(--color-text-muted);
+  margin: -0.5rem 0 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.toolCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.toolCard:hover {
+  text-decoration: none;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.toolCard h3 {
+  font-size: 1rem;
+  margin-bottom: 0.375rem;
+}
+
+.toolCard p {
+  flex: 1;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.link {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-accent-dark);
+}
+
+.appList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.appItem {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.appItem summary {
+  padding: 0.875rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.appItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.appItem summary::after {
+  content: "›";
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  transition: transform 0.2s;
+}
+
+.appItem[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.appItem summary:hover {
+  background: var(--color-surface-hover);
+}
+
+.appItem p {
+  padding: 0 1rem 0.875rem;
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}

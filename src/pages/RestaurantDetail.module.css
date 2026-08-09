@@ -1,0 +1,48 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.back {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.back:hover {
+  color: var(--color-accent);
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.featured {
+  color: var(--color-accent);
+  font-size: 1rem;
+}
+
+.header p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.deals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notFound {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.notFound h1 {
+  margin-bottom: 1rem;
+}
