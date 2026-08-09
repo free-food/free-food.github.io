@@ -14,106 +14,111 @@ docker compose up preview   # production build + serve → http://localhost:4173
 docker compose down         # stop containers
 ```
 
-Or use the Makefile shortcuts: `make dev`, `make preview`, `make down`
+Or: `make dev`, `make preview`, `make down`
+
+The dev server watches `content/` and rebuilds automatically when you save a Markdown file.
 
 ---
 
-## Adding or updating content
+## Editing content (Markdown)
 
-All content lives under `src/content/`. No React code changes needed for most edits.
-
-### Content layout
+All site content lives in **`content/`** as Markdown. No TypeScript editing required.
 
 ```
-src/content/
-├── types.ts              # Data shapes (rarely edit)
-├── site.ts               # Home intro, tools, surplus apps, filter tags
-├── utils.ts              # Search/filter helpers (rarely edit)
-├── index.ts              # Re-exports everything
+content/
+├── site.md                 # Home page intro paragraph
+├── tools.md                # Utility links + surplus food apps
 └── restaurants/
-    ├── _template.ts      # Copy this to add a new restaurant
-    ├── index.ts          # Register restaurants here (import + array entry)
-    ├── taco-bell.ts      # One file per restaurant
+    ├── _template.md        # Copy this to add a restaurant
+    ├── taco-bell.md
     └── ...
 ```
 
-### Add a new restaurant (3 steps)
-
-**1.** Copy the template:
+### Add a restaurant
 
 ```bash
-cp src/content/restaurants/_template.ts src/content/restaurants/chipotle.ts
+cp content/restaurants/_template.md content/restaurants/chipotle.md
 ```
 
-**2.** Edit your new file - set `id`, `name`, and `deals`:
+Edit the file, save, and it appears on the site.
 
-```ts
-const chipotle: Restaurant = {
-  id: "chipotle",           // → /restaurant/chipotle
-  name: "Chipotle",
-  featured: false,            // true = show on home page
-  deals: [
-    {
-      title: "Free Guac on Birthday",
-      summary: "Sign up for rewards.",
-      tags: ["free", "rewards"],
-      steps: ["Step 1…", "Step 2…"],
-      // Or nest bullets inside a step:
-      // steps: [
-      //   { text: "Choose your reward:", bullets: ["Option A", "Option B"] },
-      // ],
-      bullets: ["Extra tip…"],
-      links: [{ label: "Rewards", href: "https://…" }],
-    },
-  ],
-};
+### Restaurant file format
+
+```markdown
+---
+id: taco-bell
+name: Taco Bell
+featured: true
+---
+
+## Deal Title
+
+Short summary shown on cards.
+
+tags: free, budget, rewards
+links: [tacobell.com](http://tacobell.com)
+
+1. First numbered step
+   - Sub-bullet under that step
+2. Step with a nested list
+   - Option A
+   - Option B
+3. Another step
+
+- Use a plain bullet list when there are no numbered steps
 ```
 
-**3.** Register it in `src/content/restaurants/index.ts`:
+**Frontmatter** (between `---` at the top):
 
-```ts
-import chipotle from "./chipotle";
+| Field | Required | Description |
+|-------|----------|-------------|
+| `id` | yes | URL slug → `/restaurant/taco-bell` |
+| `name` | yes | Display name |
+| `featured` | no | `true` to show on home page |
 
-export const restaurants: Restaurant[] = [
-  // …existing entries…
-  chipotle,   // add import + array entry
-];
+**Per deal** (each `##` heading):
+
+| Line | Example |
+|------|---------|
+| Summary | First paragraph after the heading |
+| Tags | `tags: free, budget, rewards, unverified, expired, limited-time` |
+| Links | `links: [Label](https://url), [Other](https://url2)` |
+| Steps | Numbered list (`1. 2. 3.`) - indent with spaces for sub-bullets |
+| Bullets only | `- item` list (when no numbered steps) |
+
+Nested bullets work at any depth - just indent with 3 spaces per level (standard Markdown).
+
+### Edit tools
+
+Edit [`content/tools.md`](content/tools.md):
+
+```markdown
+## Utilities
+
+### My New Tool
+
+Description of what it does.
+
+url: https://example.com
+
+## Surplus Restaurant & Grocery Apps
+
+Intro paragraph for this section…
+
+### App Name
+
+Optional description when expanded.
 ```
 
-Save, and the site picks it up automatically in dev. The restaurant appears on Browse and gets its own page at `/restaurant/chipotle`.
+### Edit home intro
 
-### Update an existing restaurant
+Edit the body of [`content/site.md`](content/site.md) (below the frontmatter).
 
-Open its file in `src/content/restaurants/` (e.g. `taco-bell.ts`) and edit deals in place. Add a new deal by appending to the `deals` array.
+---
 
-### Edit tools or surplus apps
+## How it works
 
-Edit `src/content/site.ts`:
-
-- `toolLinks` - utility links on the Tools page
-- `surplusApps` - expandable app list on the Tools page
-- `siteIntro` - paragraph on the home page
-
-### Deal tags
-
-| Tag | Filter label | Use when |
-|-----|-------------|----------|
-| `free` | Free | No-cost or BOGO items |
-| `budget` | Under $10 | Good value meals under ~$10 |
-| `rewards` | Rewards signup | Requires creating an account |
-| `unverified` | Unverified | Not personally tested yet |
-| `expired` | Expired | Deal no longer active |
-| `limited-time` | Limited time | Seasonal or day-specific |
-
-### Add a new site page
-
-Pages are React components in `src/pages/`. To add one:
-
-1. Create `src/pages/YourPage.tsx`
-2. Add a route in `src/App.tsx`: `<Route path="/your-page" element={<YourPage />} />`
-3. Add a nav link in `src/components/Layout.tsx`
-
-Restaurant pages don't need this - they're generated automatically from content files.
+Markdown files are compiled to `src/generated/content.json` by `scripts/build-content.mjs` on every dev/build run. The React UI reads that JSON - presentation is unchanged, only the authoring format is Markdown.
 
 ---
 
@@ -125,14 +130,14 @@ Repo: `free-food/free-food.github.io`
 2. In **Settings → Pages**, set source to **GitHub Actions**.
 3. Site is served at `https://free-food.github.io/`.
 
-The build copies `index.html` to `404.html` so client-side routes work on direct navigation.
-
 ## Project structure
 
 ```
+content/                  # ← edit Markdown here
+scripts/build-content.mjs # parser
 src/
-├── content/            # All site data (edit here)
-├── pages/              # Home, Tools, Browse, RestaurantDetail
-├── components/         # Layout, cards, search, filters
-└── styles/             # global CSS
+├── generated/            # auto-generated JSON (don't edit)
+├── content/              # types + search helpers
+├── pages/
+└── components/
 ```

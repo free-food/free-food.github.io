@@ -1,5 +1,6 @@
 orig/
 node_modules/
 dist/
+src/generated/content.json
 .DS_Store
 *.local

@@ -1,5 +1,7 @@
 import type { Deal, NestedBullet, Restaurant, Step, Tag } from "./types";
-import { restaurants } from "./restaurants";
+import content from "../generated/content.json";
+
+const restaurants = content.restaurants as Restaurant[];
 
 function nestedBulletSearchText(bullet: NestedBullet): string[] {
   if (typeof bullet === "string") return [bullet];
