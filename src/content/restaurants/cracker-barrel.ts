@@ -16,10 +16,23 @@ const crackerBarrel: Restaurant = {
         },
       ],
       steps: [
-        "Create a new email with TempMail (account requires email verification code).",
-        "Make up a random phone number and remember it - no SMS verification needed.",
-        "Option 1: Pay at register and type in phone number when asked if you are part of rewards program.",
-        "Option 2: Scan QR on receipt to pay at table, go to rewards section and apply the reward at checkout.",
+        {
+          text: "Create a new email with TempMail",
+          bullets: ["Account requires email verification code."],
+        },
+        {
+          text: "Make up a random phone number and remember it",
+          bullets: [
+            "You don't need to get SMS verification so you can use any number.",
+          ],
+        },
+        {
+          text: "How to redeem",
+          bullets: [
+            "Option 1: pay at register and type in phone number when they ask if you are part of rewards program.",
+            "Option 2: scan QR on receipt to pay at table and you can redeem reward directly from checkout, just make sure to go to the rewards section and apply it.",
+          ],
+        },
       ],
     },
   ],

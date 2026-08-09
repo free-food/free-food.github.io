@@ -8,8 +8,13 @@ const canyonPizza: Restaurant = {
       title: "$6 Combo",
       summary: "Two slices of pizza, canned soda, two huge breadsticks.",
       tags: ["budget"],
-      bullets: [
-        "If you are especially hungry, buy two additional breadsticks for $1, or swap the combo breadsticks for the pepperoni roll ($2 value, doesn't increase price), then spend the $1 extra on two breadsticks (definitely worth the price).",
+      steps: [
+        {
+          text: "$6 Combo - Two slices of pizza, canned soda, two huge breadsticks",
+          bullets: [
+            "If you are especially hungry, you can either buy two additional breadsticks for $1 or swap out the breadsticks in the combo for the pepperoni roll ($2 value, doesn't increase price), then spend the $1 extra on two breadsticks (definitely worth the price).",
+          ],
+        },
       ],
     },
     {

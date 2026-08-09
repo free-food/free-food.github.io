@@ -30,8 +30,18 @@ const paneraBread: Restaurant = {
       title: "Free Pastry/Sweet with Any Purchase",
       tags: ["free", "rewards"],
       steps: [
-        "Create a new account - no verification code needed, use random email and phone.",
-        "Best value: Buy a cinnamon crunch bagel (sliced and toasted w/ butter) and redeem a Kitchen Sink cookie. Total ~$2.",
+        {
+          text: "Create a new account",
+          bullets: [
+            "It doesn't ask for any verification code, so just enter a random email address and phone number and you can immediately redeem.",
+          ],
+        },
+        {
+          text: "Best value",
+          bullets: [
+            "Buy a cinnamon crunch bagel (sliced and toasted w/ butter) and redeem a Kitchen Sink cookie as your free reward. Total comes to $2 and is a great value.",
+          ],
+        },
       ],
     },
   ],

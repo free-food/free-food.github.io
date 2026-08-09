@@ -19,10 +19,19 @@ const wendys: Restaurant = {
       summary: "October only.",
       tags: ["free", "budget", "limited-time"],
       steps: [
-        "Buy the Boo Book on the app - five free junior frosties and one $2 kids meal w/ purchase.",
-        "To qualify for the $2 kids meal, buy another boo book.",
-        "Buy as many as you want during the month; expires at end of year.",
-        "Kids meal: small entree (cheeseburger or 4 pc nugget), small refillable drink, small fry, and toy.",
+        {
+          text: "Buy the Boo Book on the app",
+          bullets: [
+            {
+              text: "Gives coupons for five free junior frosties and one $2 kids meal w/ purchase.",
+              bullets: [
+                "To qualify for the $2 kids meal, just buy another boo book.",
+              ],
+            },
+          ],
+        },
+        "Can buy as many as you want during the month, expires at end of year.",
+        "Kids meal includes small entree (cheeseburger or 4 pc nugget), small refillable drink, small fry, and toy.",
       ],
     },
   ],

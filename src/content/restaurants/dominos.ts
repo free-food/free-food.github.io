@@ -12,15 +12,25 @@ const dominos: Restaurant = {
     {
       title: "Pick 2 for $6.99 Each",
       tags: ["budget"],
-      bullets: [
-        "There are two deals under this same name - one pizzas only, the other has a few other items you can mix and match.",
+      steps: [
+        {
+          text: "Pick 2 for $6.99 each",
+          bullets: [
+            "There are two deals under this same name, both cover mostly the same but one is pizzas only while the other has a few other items you can mix and match.",
+          ],
+        },
       ],
     },
     {
       title: "Free 16-Piece Parmesan Bread Bites",
       summary: "Every other order.",
       tags: ["free"],
-      bullets: ["You WILL want to get the garlic cup for these."],
+      steps: [
+        {
+          text: "Every other order you can get a free 16-piece parmesan bread bite",
+          bullets: ["You WILL want to get the garlic cup for these."],
+        },
+      ],
     },
     {
       title: "Well-Done Bake + Square Cut Tip",

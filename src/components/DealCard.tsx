@@ -1,5 +1,5 @@
-import { useState } from "react";
-import type { Deal } from "../content";
+import { useState, type ReactNode } from "react";
+import type { Deal, NestedBullet } from "../content";
 import TagBadge from "./TagBadge";
 import styles from "./DealCard.module.css";
 
@@ -7,6 +7,23 @@ type Props = {
   deal: Deal;
   defaultOpen?: boolean;
 };
+
+function renderNestedBullet(bullet: NestedBullet, key: number): ReactNode {
+  if (typeof bullet === "string") {
+    return <li key={key}>{bullet}</li>;
+  }
+
+  return (
+    <li key={key}>
+      {bullet.text}
+      {bullet.bullets && bullet.bullets.length > 0 && (
+        <ul className={styles.stepBullets}>
+          {bullet.bullets.map((child, j) => renderNestedBullet(child, j))}
+        </ul>
+      )}
+    </li>
+  );
+}
 
 export default function DealCard({ deal, defaultOpen = false }: Props) {
   const [open, setOpen] = useState(defaultOpen);
@@ -79,9 +96,9 @@ export default function DealCard({ deal, defaultOpen = false }: Props) {
                       {step.text}
                       {step.bullets && step.bullets.length > 0 && (
                         <ul className={styles.stepBullets}>
-                          {step.bullets.map((bullet, j) => (
-                            <li key={j}>{bullet}</li>
-                          ))}
+                          {step.bullets.map((bullet, j) =>
+                            renderNestedBullet(bullet, j),
+                          )}
                         </ul>
                       )}
                     </>

@@ -17,10 +17,14 @@ const popeyes: Restaurant = {
       ],
       steps: [
         "Buy something cheap like a single biscuit or one of the special sauces.",
-        "On the back of the receipt, fill out the survey at tellpopeyes.com.",
-        "Go to the counter with your receipt and the code page open on your phone.",
-        "They'll ask white or dark meat, regular or spicy, and which large drink.",
-        "Pay for the large drink and get your receipt - reuse within thirty days.",
+        {
+          text: "On the back of the receipt there is a link to a survey at tellpopeyes.com",
+          bullets: ["See alternate survey link above if needed."],
+        },
+        "Fill out the survey and get your code.",
+        "Go to the counter with your receipt and the page with the code open on your phone.",
+        "They will ask you if you want white or dark meat and if you want regular or spicy, as well as which large drink you want.",
+        "Pay for the large drink and make sure you get your receipt; you can use this receipt to do the method again as long as you do it within thirty days.",
       ],
     },
   ],

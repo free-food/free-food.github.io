@@ -1,6 +1,7 @@
 export type {
   Tag,
   Link,
+  NestedBullet,
   Step,
   Deal,
   Restaurant,

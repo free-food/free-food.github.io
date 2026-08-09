@@ -1,9 +1,17 @@
-import type { Deal, Restaurant, Step, Tag } from "./types";
+import type { Deal, NestedBullet, Restaurant, Step, Tag } from "./types";
 import { restaurants } from "./restaurants";
+
+function nestedBulletSearchText(bullet: NestedBullet): string[] {
+  if (typeof bullet === "string") return [bullet];
+  return [
+    bullet.text,
+    ...(bullet.bullets ?? []).flatMap(nestedBulletSearchText),
+  ];
+}
 
 function stepSearchText(step: Step): string[] {
   if (typeof step === "string") return [step];
-  return [step.text, ...(step.bullets ?? [])];
+  return [step.text, ...(step.bullets ?? []).flatMap(nestedBulletSearchText)];
 }
 
 export function getRestaurantById(id: string): Restaurant | undefined {

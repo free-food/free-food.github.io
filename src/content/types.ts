@@ -11,11 +11,18 @@ export type Link = {
   href: string;
 };
 
+export type NestedBullet =
+  | string
+  | {
+      text: string;
+      bullets?: NestedBullet[];
+    };
+
 export type Step =
   | string
   | {
       text: string;
-      bullets?: string[];
+      bullets?: NestedBullet[];
     };
 
 export type Deal = {
