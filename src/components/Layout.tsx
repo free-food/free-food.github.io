@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 import styles from "./Layout.module.css";
 
 type Props = {
@@ -14,11 +15,14 @@ export default function Layout({ children }: Props) {
             <span className={styles.logoIcon}>🍽</span>
             Free Food
           </Link>
-          <nav className={styles.nav}>
-            <Link to="/">Home</Link>
-            <Link to="/tools">Tools</Link>
-            <Link to="/browse">Browse</Link>
-          </nav>
+          <div className={styles.headerActions}>
+            <nav className={styles.nav}>
+              <Link to="/">Home</Link>
+              <Link to="/tools">Tools</Link>
+              <Link to="/browse">Browse</Link>
+            </nav>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
       <main className={styles.main}>{children}</main>

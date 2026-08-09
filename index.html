@@ -8,6 +8,18 @@
       content="Discounts, good value deals, free stuff, and rewards schemes - filling meals for $10 or less."
     />
     <title>Free Food - Deals &amp; Rewards</title>
+    <script>
+      (function () {
+        var m = document.cookie.match(/(?:^|; )theme=([^;]*)/);
+        var t = m ? decodeURIComponent(m[1]) : null;
+        if (!t) {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

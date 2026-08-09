@@ -148,7 +148,7 @@
 
 .quickLink:hover {
   text-decoration: none;
-  background: #ffe8d4;
+  background: var(--color-accent-soft-hover);
 }
 
 .quickIcon {
