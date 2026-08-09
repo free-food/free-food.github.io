@@ -1,4 +1,4 @@
-import type { Tag } from "../content/deals";
+import type { Tag } from "../content";
 
 const tagStyles: Record<Tag, { bg: string; color: string }> = {
   free: { bg: "var(--color-tag-free-bg)", color: "var(--color-tag-free)" },

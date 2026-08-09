@@ -5,7 +5,7 @@ import {
   restaurantMatchesSearch,
   restaurantHasTag,
   type Tag,
-} from "../content/deals";
+} from "../content";
 import SearchBar from "../components/SearchBar";
 import FilterChips from "../components/FilterChips";
 import RestaurantCard from "../components/RestaurantCard";

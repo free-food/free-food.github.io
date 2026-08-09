@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { Restaurant } from "../content/deals";
+import type { Restaurant } from "../content";
 import TagBadge from "./TagBadge";
 import styles from "./RestaurantCard.module.css";
 

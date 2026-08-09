@@ -4,7 +4,7 @@ import {
   siteIntro,
   restaurants,
   getFeaturedDeals,
-} from "../content/deals";
+} from "../content";
 import SearchBar from "../components/SearchBar";
 import TagBadge from "../components/TagBadge";
 import styles from "./Home.module.css";

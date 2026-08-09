@@ -2,7 +2,7 @@ import {
   toolLinks,
   surplusApps,
   surplusAppsIntro,
-} from "../content/deals";
+} from "../content";
 import styles from "./Tools.module.css";
 
 export default function Tools() {

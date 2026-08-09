@@ -1,5 +1,5 @@
-import type { Tag } from "../content/deals";
-import { allTags } from "../content/deals";
+import type { Tag } from "../content";
+import { allTags } from "../content";
 import styles from "./FilterChips.module.css";
 
 type Props = {

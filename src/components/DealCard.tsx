@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Deal } from "../content/deals";
+import type { Deal } from "../content";
 import TagBadge from "./TagBadge";
 import styles from "./DealCard.module.css";
 

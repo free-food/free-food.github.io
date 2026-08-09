@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { getRestaurantById } from "../content/deals";
+import { getRestaurantById } from "../content";
 import DealCard from "../components/DealCard";
 import styles from "./RestaurantDetail.module.css";
 
