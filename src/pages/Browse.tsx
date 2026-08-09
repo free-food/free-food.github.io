@@ -16,6 +16,7 @@ export default function Browse() {
   const initialQuery = searchParams.get("q") ?? "";
   const [search, setSearch] = useState(initialQuery);
   const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
+  const fromSearch = searchParams.has("q");
 
   const filtered = useMemo(() => {
     return restaurants.filter((r) => {
@@ -36,7 +37,7 @@ export default function Browse() {
       </header>
 
       <div className={styles.controls}>
-        <SearchBar value={search} onChange={setSearch} />
+        <SearchBar value={search} onChange={setSearch} autoFocus={fromSearch} />
         <FilterChips selected={selectedTags} onChange={setSelectedTags} />
       </div>
 
