@@ -12,6 +12,13 @@ export const toolLinks: ToolLink[] = [
     href: "https://temp-mail.org",
   },
   {
+    id: "temp-number",
+    name: "Temporary Phone Number",
+    description:
+      "Useful for rewards signups that ask for a phone number you won't need long-term.",
+    href: "https://temp-number.com/countries/united-states",
+  },
+  {
     id: "birthday-freebies",
     name: "Birthday Rewards",
     description:
