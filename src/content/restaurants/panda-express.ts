@@ -6,7 +6,7 @@ const pandaExpress: Restaurant = {
   deals: [
     {
       title: "25% Off First Order",
-      summary: "Make a rewards account — Plate ~$7.75, Bigger Plate ~$8.95.",
+      summary: "Make a rewards account - Plate ~$7.75, Bigger Plate ~$8.95.",
       tags: ["budget", "rewards"],
     },
     {

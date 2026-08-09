@@ -6,11 +6,11 @@ const dennys: Restaurant = {
   deals: [
     {
       title: "Free Welcome Reward",
-      summary: "Needs more investigation.",
+      summary: "Currently prone to breakage - I wouldn't use it right now for more than one or two items",
       tags: ["free", "rewards", "unverified"],
       bullets: [
         "Free welcome reward when you sign up for account.",
-        "Can get any side for free with reward — stack of pancakes is best value.",
+        "Can get any side for free with reward - this includes a large amount of menu items.",
       ],
     },
   ],

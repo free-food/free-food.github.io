@@ -11,7 +11,7 @@ const wendys: Restaurant = {
         "Sign up for a new rewards account with TempMail.",
         "Wait about five to ten minutes.",
         "Go to offers in app and redeem each.",
-        "For nuggets, make a purchase to redeem — buy the cheapest thing on the menu.",
+        "For nuggets, make a purchase to redeem - buy the cheapest thing on the menu.",
       ],
     },
     {
@@ -19,7 +19,7 @@ const wendys: Restaurant = {
       summary: "October only.",
       tags: ["free", "budget", "limited-time"],
       steps: [
-        "Buy the Boo Book on the app — five free junior frosties and one $2 kids meal w/ purchase.",
+        "Buy the Boo Book on the app - five free junior frosties and one $2 kids meal w/ purchase.",
         "To qualify for the $2 kids meal, buy another boo book.",
         "Buy as many as you want during the month; expires at end of year.",
         "Kids meal: small entree (cheeseburger or 4 pc nugget), small refillable drink, small fry, and toy.",

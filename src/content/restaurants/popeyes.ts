@@ -20,7 +20,7 @@ const popeyes: Restaurant = {
         "On the back of the receipt, fill out the survey at tellpopeyes.com.",
         "Go to the counter with your receipt and the code page open on your phone.",
         "They'll ask white or dark meat, regular or spicy, and which large drink.",
-        "Pay for the large drink and get your receipt — reuse within thirty days.",
+        "Pay for the large drink and get your receipt - reuse within thirty days.",
       ],
     },
   ],

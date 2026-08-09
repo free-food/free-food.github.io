@@ -7,7 +7,7 @@ const chilis: Restaurant = {
     {
       title: "Free Chips & Salsa Every Visit",
       summary:
-        "No need to churn accounts — sign into your account on the checkout tablet for free chips & salsa on every visit.",
+        "No need to churn accounts - sign into your account on the checkout tablet for free chips & salsa on every visit.",
       tags: ["free", "rewards"],
     },
   ],

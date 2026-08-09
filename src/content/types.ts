@@ -21,7 +21,7 @@ export type Deal = {
 };
 
 export type Restaurant = {
-  /** URL slug — becomes /restaurant/{id}. Use lowercase letters, numbers, hyphens. */
+  /** URL slug - becomes /restaurant/{id}. Use lowercase letters, numbers, hyphens. */
   id: string;
   name: string;
   /** Show on home page featured section */

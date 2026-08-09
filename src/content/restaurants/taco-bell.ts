@@ -29,8 +29,8 @@ const tacoBell: Restaurant = {
       summary: "~$7 depending on location.",
       tags: ["budget"],
       bullets: [
-        "Crunchwrap Supreme — Customize → Make it Grilled",
-        "Beefy 5-Layer Burrito — Customize → Make it Grilled",
+        "Crunchwrap Supreme - Customize → Make it Grilled",
+        "Beefy 5-Layer Burrito - Customize → Make it Grilled",
         "Chips and Queso or Cheesy Fiesta Potatoes",
         "Upgrade medium drink to large for only $0.10 extra",
       ],

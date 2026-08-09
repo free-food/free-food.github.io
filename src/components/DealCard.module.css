@@ -18,12 +18,22 @@
   transition: background 0.15s;
 }
 
-.header:not(:disabled):hover {
+.header:not(.static):hover {
   background: var(--color-surface-hover);
 }
 
-.header:disabled {
+.header.static {
   cursor: default;
+}
+
+.expired {
+  opacity: 0.6;
+  background: var(--color-bg);
+}
+
+.expired .title,
+.expired .summary {
+  color: var(--color-text-muted);
 }
 
 .headerContent {

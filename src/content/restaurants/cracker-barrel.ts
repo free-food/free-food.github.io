@@ -17,7 +17,7 @@ const crackerBarrel: Restaurant = {
       ],
       steps: [
         "Create a new email with TempMail (account requires email verification code).",
-        "Make up a random phone number and remember it — no SMS verification needed.",
+        "Make up a random phone number and remember it - no SMS verification needed.",
         "Option 1: Pay at register and type in phone number when asked if you are part of rewards program.",
         "Option 2: Scan QR on receipt to pay at table, go to rewards section and apply the reward at checkout.",
       ],

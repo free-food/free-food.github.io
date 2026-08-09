@@ -1,6 +1,6 @@
 # Free Food
 
-Interactive guide to discounts, good value deals, free stuff, and rewards schemes — filling meals for $10 or less.
+Interactive guide to discounts, good value deals, free stuff, and rewards schemes - filling meals for $10 or less.
 
 Live site: [https://free-food.github.io/](https://free-food.github.io/)
 
@@ -45,7 +45,7 @@ src/content/
 cp src/content/restaurants/_template.ts src/content/restaurants/chipotle.ts
 ```
 
-**2.** Edit your new file — set `id`, `name`, and `deals`:
+**2.** Edit your new file - set `id`, `name`, and `deals`:
 
 ```ts
 const chipotle: Restaurant = {
@@ -86,9 +86,9 @@ Open its file in `src/content/restaurants/` (e.g. `taco-bell.ts`) and edit deals
 
 Edit `src/content/site.ts`:
 
-- `toolLinks` — utility links on the Tools page
-- `surplusApps` — expandable app list on the Tools page
-- `siteIntro` — paragraph on the home page
+- `toolLinks` - utility links on the Tools page
+- `surplusApps` - expandable app list on the Tools page
+- `siteIntro` - paragraph on the home page
 
 ### Deal tags
 
@@ -109,7 +109,7 @@ Pages are React components in `src/pages/`. To add one:
 2. Add a route in `src/App.tsx`: `<Route path="/your-page" element={<YourPage />} />`
 3. Add a nav link in `src/components/Layout.tsx`
 
-Restaurant pages don't need this — they're generated automatically from content files.
+Restaurant pages don't need this - they're generated automatically from content files.
 
 ---
 
@@ -117,7 +117,7 @@ Restaurant pages don't need this — they're generated automatically from conten
 
 Repo: `free-food/free-food.github.io`
 
-1. Push to `main` — the deploy workflow builds and publishes automatically.
+1. Push to `main` - the deploy workflow builds and publishes automatically.
 2. In **Settings → Pages**, set source to **GitHub Actions**.
 3. Site is served at `https://free-food.github.io/`.
 

@@ -15,7 +15,7 @@ export const toolLinks: ToolLink[] = [
     id: "birthday-freebies",
     name: "Birthday Rewards",
     description:
-      "Up-to-date birthday freebies — also other good things on that site.",
+      "Up-to-date birthday freebies - also other good things on that site.",
     href: "https://www.heyitsfree.net/birthday-freebies/",
   },
 ];
@@ -28,11 +28,11 @@ export const surplusApps: SurplusApp[] = [
     id: "too-good-to-go",
     name: "Too Good To Go",
     description:
-      "Highly depends on the area — stores give out unsold food at end of day. Can be hit or miss on if it's food you like, but usually pretty cheap. Works better in cities.",
+      "Highly depends on the area - stores give out unsold food at end of day. Can be hit or miss on if it's food you like, but usually pretty cheap. Works better in cities.",
   },
   { id: "res-q-club", name: "Res-Q Club" },
   { id: "foodsi", name: "Foodsi" },
-  { id: "karma", name: "Karma — Save Food With a Tap" },
+  { id: "karma", name: "Karma - Save Food With a Tap" },
   { id: "olio", name: "Olio" },
   { id: "flashfood", name: "Flashfood" },
   { id: "foodhero", name: "FoodHero" },
