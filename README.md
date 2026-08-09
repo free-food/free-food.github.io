@@ -58,6 +58,10 @@ const chipotle: Restaurant = {
       summary: "Sign up for rewards.",
       tags: ["free", "rewards"],
       steps: ["Step 1…", "Step 2…"],
+      // Or nest bullets inside a step:
+      // steps: [
+      //   { text: "Choose your reward:", bullets: ["Option A", "Option B"] },
+      // ],
       bullets: ["Extra tip…"],
       links: [{ label: "Rewards", href: "https://…" }],
     },

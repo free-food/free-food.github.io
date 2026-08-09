@@ -14,8 +14,15 @@ const template: Restaurant = {
       summary: "Short description shown on cards.",
       tags: ["budget"], // free | budget | rewards | unverified | expired | limited-time
       steps: [
-        "Step 1: Do this first.",
-        "Step 2: Then do this.",
+        "Simple step as a plain string.",
+        {
+          text: "Step with sub-bullets:",
+          bullets: [
+            "First sub-item",
+            "Second sub-item",
+          ],
+        },
+        "Another plain step.",
       ],
       bullets: [
         "Optional tip or note.",

@@ -1,5 +1,10 @@
-import type { Deal, Restaurant, Tag } from "./types";
+import type { Deal, Restaurant, Step, Tag } from "./types";
 import { restaurants } from "./restaurants";
+
+function stepSearchText(step: Step): string[] {
+  if (typeof step === "string") return [step];
+  return [step.text, ...(step.bullets ?? [])];
+}
 
 export function getRestaurantById(id: string): Restaurant | undefined {
   return restaurants.find((r) => r.id === id);
@@ -10,7 +15,7 @@ export function dealMatchesSearch(deal: Deal, query: string): boolean {
   const parts = [
     deal.title,
     deal.summary,
-    ...(deal.steps ?? []),
+    ...(deal.steps ?? []).flatMap(stepSearchText),
     ...(deal.bullets ?? []),
   ];
   return parts.some((p) => p?.toLowerCase().includes(q));

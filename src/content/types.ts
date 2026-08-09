@@ -11,11 +11,18 @@ export type Link = {
   href: string;
 };
 
+export type Step =
+  | string
+  | {
+      text: string;
+      bullets?: string[];
+    };
+
 export type Deal = {
   title: string;
   summary?: string;
   tags?: Tag[];
-  steps?: string[];
+  steps?: Step[];
   bullets?: string[];
   links?: Link[];
 };

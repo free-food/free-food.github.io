@@ -117,3 +117,18 @@
 .bullets li:last-child {
   margin-bottom: 0;
 }
+
+.stepBullets {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.stepBullets li {
+  margin-bottom: 0.25rem;
+}
+
+.stepBullets li:last-child {
+  margin-bottom: 0;
+}

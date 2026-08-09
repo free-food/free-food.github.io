@@ -71,7 +71,22 @@ export default function DealCard({ deal, defaultOpen = false }: Props) {
           {deal.steps && deal.steps.length > 0 && (
             <ol className={styles.steps}>
               {deal.steps.map((step, i) => (
-                <li key={i}>{step}</li>
+                <li key={i}>
+                  {typeof step === "string" ? (
+                    step
+                  ) : (
+                    <>
+                      {step.text}
+                      {step.bullets && step.bullets.length > 0 && (
+                        <ul className={styles.stepBullets}>
+                          {step.bullets.map((bullet, j) => (
+                            <li key={j}>{bullet}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
+                  )}
+                </li>
               ))}
             </ol>
           )}

@@ -1,6 +1,7 @@
 export type {
   Tag,
   Link,
+  Step,
   Deal,
   Restaurant,
   ToolLink,
